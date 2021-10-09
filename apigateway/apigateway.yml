@@ -12,18 +12,18 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: hello
-        uri: http://localhost:8084
+      - id: product
+        uri: http://localhost:8081
         predicates:
-        - Path=/hello/**
+        - Path=/prodcut/**
         filters:
-        - RewritePath=/hello/(?<path>.*), /$\{path}
-      - id: world
-        uri: lb://world
+        - RewritePath=/product/(?<path>.*), /$\{path}
+      - id: review
+        uri: lb://review
         predicates:
-        - Path=/world/**
+        - Path=/review/**
         filters:
-        - RewritePath=/world/(?<path>.*), /$\{path}
+        - RewritePath=/review/(?<path>.*), /$\{path}
         
 management:
   endpoints:
