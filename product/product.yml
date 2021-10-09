@@ -1,1 +1,14 @@
-
+server:
+  port: 8081
+  
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/project-01?serverTimezone=UTC
+    username: coupang
+    password: coupang
+  jpa:
+    hibernate.ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
