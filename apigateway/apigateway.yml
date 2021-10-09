@@ -19,7 +19,7 @@ spring:
         filters:
         - RewritePath=/product/(?<path>.*), /$\{path}
       - id: review
-        uri: lb://review
+        uri: http://localhost:8082
         predicates:
         - Path=/review/**
         filters:
